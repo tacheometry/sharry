@@ -24,7 +24,7 @@ object Dependencies {
   val SourcecodeVersion = "0.2.8"
   val SwaggerVersion = "4.11.1"
   val TikaVersion = "2.4.1"
-  val TusClientVersion = "1.8.0-1"
+  val TusClientVersion = "1.8.0-2"
   val YamuscaVersion = "0.9.0"
 
   val scribe = Seq(
