@@ -4,26 +4,26 @@ object Dependencies {
 
   val BcryptVersion = "0.4"
   val BetterMonadicForVersion = "0.3.1"
-  val BinnyVersion = "0.4.0"
-  val CirceVersion = "0.14.2"
+  val BinnyVersion = "0.6.0"
+  val CirceVersion = "0.14.3"
   val ClipboardJsVersion = "2.0.6"
   val DoobieVersion = "1.0.0-RC2"
   val EmilVersion = "0.12.0"
-  val FlywayVersion = "8.5.13"
-  val Fs2Version = "3.2.8"
+  val FlywayVersion = "9.4.0"
+  val Fs2Version = "3.3.0"
   val H2Version = "2.1.214"
-  val Http4sVersion = "0.23.12"
+  val Http4sVersion = "0.23.16"
   val JQueryVersion = "3.5.1"
   val KindProjectorVersion = "0.10.3"
-  val MariaDbVersion = "3.0.5"
+  val MariaDbVersion = "3.0.8"
   val MUnitVersion = "0.7.29"
   val OrganizeImportsVersion = "0.6.0"
-  val PostgresVersion = "42.4.0"
+  val PostgresVersion = "42.5.0"
   val PureConfigVersion = "0.17.1"
-  val ScribeVersion = "3.8.0"
+  val ScribeVersion = "3.9.0"
   val SourcecodeVersion = "0.2.8"
-  val SwaggerVersion = "4.11.1"
-  val TikaVersion = "2.4.1"
+  val SwaggerVersion = "4.14.2"
+  val TikaVersion = "2.5.0"
   val TusClientVersion = "1.8.0-1"
   val YamuscaVersion = "0.9.0"
 
@@ -48,14 +48,14 @@ object Dependencies {
   )
 
   val http4s = Seq(
-    "org.http4s" %% "http4s-blaze-server" % Http4sVersion,
+    "org.http4s" %% "http4s-blaze-server" % "0.23.12",
     "org.http4s" %% "http4s-circe" % Http4sVersion,
     "org.http4s" %% "http4s-dsl" % Http4sVersion
   )
 
   val http4sclient = Seq(
     "org.http4s" %% "http4s-dsl" % Http4sVersion,
-    "org.http4s" %% "http4s-blaze-client" % Http4sVersion
+    "org.http4s" %% "http4s-blaze-client" % "0.23.12"
   )
 
   val circeCore = Seq(
@@ -95,6 +95,8 @@ object Dependencies {
   val binny = Seq(
     "com.github.eikek" %% "binny-core" % BinnyVersion,
     "com.github.eikek" %% "binny-jdbc" % BinnyVersion,
+    "com.github.eikek" %% "binny-minio" % BinnyVersion,
+    "com.github.eikek" %% "binny-fs" % BinnyVersion,
     "com.github.eikek" %% "binny-tika-detect" % BinnyVersion
   )
 
@@ -106,7 +108,8 @@ object Dependencies {
   // https://github.com/flyway/flyway
   // ASL 2.0
   val flyway = Seq(
-    "org.flywaydb" % "flyway-core" % FlywayVersion
+    "org.flywaydb" % "flyway-core" % FlywayVersion,
+    "org.flywaydb" % "flyway-mysql" % FlywayVersion
   )
 
   val yamusca = Seq(

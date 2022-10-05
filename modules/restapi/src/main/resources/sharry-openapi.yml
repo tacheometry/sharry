@@ -2,7 +2,7 @@ openapi: 3.0.0
 
 info:
   title: Sharry
-  version: 1.11.0-SNAPSHOT
+  version: 1.12.0-SNAPSHOT
   license:
     name: GPLv3
     url: https://spdx.org/licenses/GPL-3.0-or-later.html
@@ -1610,7 +1610,8 @@ components:
         checksum:
           type: string
           description: |
-            The (sha256) checksum of the file's contents.
+            The (sha256) checksum of the file's contents. It might be
+            empty if it hasn't been computed yet.
         storedSize:
           type: integer
           format: size
@@ -1921,6 +1922,7 @@ components:
         - aliasMemberEnabled
         - defaultValidity
         - initialTheme
+        - oauthAutoRedirect
       properties:
         appName:
           type: string
@@ -1986,6 +1988,8 @@ components:
         initialTheme:
           type: string
           format: theme
+        oauthAutoRedirect:
+          type: boolean
     OAuthItem:
       description: |
         Information about a configured OAuth provider.

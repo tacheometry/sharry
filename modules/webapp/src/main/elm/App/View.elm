@@ -2,6 +2,8 @@ module App.View exposing (view)
 
 import Api.Model.AuthResult exposing (AuthResult)
 import App.Data exposing (..)
+import Data.Flags
+import Data.InitialView exposing (InitialView)
 import Data.UiTheme
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -263,7 +265,17 @@ userMenu2 texts model acc =
             , a
                 [ href "#"
                 , class dropdownItem
-                , onClick Logout
+                , classList [ ( "disabled", Data.Flags.isOAuthAutoRedirect model.flags ) ]
+                , if Data.Flags.isOAuthAutoRedirect model.flags then
+                    class ""
+
+                  else
+                    onClick Logout
+                , if Data.Flags.isOAuthAutoRedirect model.flags then
+                    title texts.app.logoutOAuth
+
+                  else
+                    title texts.app.logoutSharry
                 ]
                 [ i [ class "fa fa-sign-out-alt w-6" ] []
                 , span [ class "ml-1" ]
@@ -317,7 +329,7 @@ mainContent texts model =
             DetailPage id ->
                 viewDetail id texts model
 
-            OpenDetailPage id ->
+            OpenDetailPage id _ ->
                 viewOpenDetail id texts model
         ]
 
@@ -440,7 +452,7 @@ styleMain =
 
 styleContent : String
 styleContent =
-    "h-full flex-grow"
+    "flex flex-grow"
 
 
 styleFooter : String

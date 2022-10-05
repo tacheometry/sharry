@@ -3,7 +3,8 @@ package sharry.restserver.routes
 import cats.effect._
 
 import sharry.restapi.model._
-import sharry.restserver.{BuildInfo, Config}
+import sharry.restserver.BuildInfo
+import sharry.restserver.config.Config
 
 import org.http4s.HttpRoutes
 import org.http4s.circe.CirceEntityEncoder._
@@ -74,7 +75,8 @@ object InfoRoutes {
       cfg.backend.auth.isOAuthOnly,
       cfg.aliasMemberEnabled,
       cfg.webapp.defaultValidity,
-      cfg.webapp.initialTheme
+      cfg.webapp.initialTheme,
+      cfg.webapp.oauthAutoRedirect
     )
   }
 
