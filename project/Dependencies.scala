@@ -4,12 +4,12 @@ object Dependencies {
 
   val BcryptVersion = "0.4"
   val BetterMonadicForVersion = "0.3.1"
-  val BinnyVersion = "0.6.0"
+  val BinnyVersion = "0.7.0"
   val CirceVersion = "0.14.3"
   val ClipboardJsVersion = "2.0.6"
   val DoobieVersion = "1.0.0-RC2"
-  val EmilVersion = "0.12.0"
-  val FlywayVersion = "9.4.0"
+  val EmilVersion = "0.13.0"
+  val FlywayVersion = "9.6.0"
   val Fs2Version = "3.3.0"
   val H2Version = "2.1.214"
   val Http4sVersion = "0.23.16"
@@ -22,10 +22,10 @@ object Dependencies {
   val PureConfigVersion = "0.17.1"
   val ScribeVersion = "3.9.0"
   val SourcecodeVersion = "0.2.8"
-  val SwaggerVersion = "4.14.2"
+  val SwaggerVersion = "4.15.0"
   val TikaVersion = "2.5.0"
   val TusClientVersion = "1.8.0-1"
-  val YamuscaVersion = "0.9.0"
+  val YamuscaVersion = "0.10.0"
 
   val scribe = Seq(
     "com.outr" %% "scribe" % ScribeVersion,
